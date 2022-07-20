@@ -1,0 +1,36 @@
+body {
+    font-size: 22px;
+}
+
+input[type="text"] {
+    margin: 10px 0;
+    display: block;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background-color: gray;
+    text-align: center;
+    color: white;
+    line-height: 150px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.text-black {
+    color: black;
+}
+
+.text-orange {
+    color: orange;
+}

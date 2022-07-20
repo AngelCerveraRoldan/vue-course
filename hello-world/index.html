@@ -5,21 +5,41 @@
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>Document</title>
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-<div id="app">
-    <div>
-        <label for="goal">Goal</label>
-        <input id="goal" type="text" v-model="enteredValue"/>
-        <button v-on:click="addGoal">Add Goal</button>
+    <!--Vue goes in here-->
+    <div id="app" v-cloak>
+        <p>{{ fullName }}</p>
+        <p>{{ age }}</p>
+        <hr />
+
+        <label>First Name</label>
+        <input type="text" v-model="firstName"/>
+
+        <label>Last Name</label>
+        <input type="text" :value="lastName" @input.prevent="updateLastName('Changing last name', $event)"/>
+
+        <button type="button" @click="increment">Increment</button>
+        <button type="button" @click="age --">Decrement</button>
+
+        <div class="circle" :class="[selectedColor, colorClasses]">
+            Curple
+        </div>
+
+        <label><input type="checkbox" v-model="isPurple">Purple</label>
+
+        <select v-model="selectedColor">
+            <option>White</option>
+            <option value="text-black">Black</option>
+            <option value="text-orange">Orange</option>
+        </select>
+
     </div>
 
-    <ul>
-        <li v-for="goal in goals">{{ goal }}</li>
-    </ul>
-</div>
-<script src="https://unpkg.com/vue@3"></script>
-<script src="app.js"></script>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="app.js"></script>
 </body>
 </html>
